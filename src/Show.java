@@ -55,12 +55,15 @@ public class Show {
     }
     public void victory(){
         System.out.print("A win!\n");
+        flush();
     }
     public void draw(){
         System.out.print("A draw.\n");
+        flush();
     }
     public void loss(){
         System.out.print("A loss.\n");
+        flush();
     }
     public void playerTurn(){
         System.out.print("It is your turn. Please input the position.\n");
@@ -72,5 +75,10 @@ public class Show {
     public void clearConsole()
     {
         //this is where I would clear the console if I knew how to do that...
+    }
+    private void flush(){
+        for(int i = 0; i < 9; i++){
+            this.charBoard[i] = ' ';
+        }
     }
 }

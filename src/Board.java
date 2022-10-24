@@ -80,4 +80,9 @@ public class Board {
         }
         return 2;
     }
+    public void flush(){
+        for(int i = 0; i < 9; i++){
+            board[i] = 2;
+        }
+    }
 }

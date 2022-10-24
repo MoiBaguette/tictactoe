@@ -54,16 +54,19 @@ public class Controller {
                 show.victory();
             if(computer == 0)
                 show.loss();
+            board.flush();
             return false;
         } else if (checkW == 1){
             if(player == 0)
                 show.loss();
             if(computer == 0)
                 show.victory();
+            board.flush();
             return false;
         } else {
             if(board.endGame()){
                 show.draw();
+                board.flush();
                 return false;
             }
         }
