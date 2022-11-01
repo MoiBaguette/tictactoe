@@ -28,10 +28,12 @@ public class Show {
     public void setUp() {
         System.out.print("To play a game of Eieren, kaas & boter vs the computer. Press 1 and enter.\n");
         System.out.print("For instructions on how to play. Press 2 and enter.\n");
+        System.out.print("To test server communication press 3.\n");
         System.out.print("To Exit this program. Press 9 and enter.\n");
     }
 
     public void instructions(){
+        boolean state = true;
         System.out.print("Welcome to Eieren, kaas & boter.\n" +
                 "To play enter first the position and press enter.\n" +
                 "The positions are as follows.\n");
@@ -44,14 +46,17 @@ public class Show {
                 System.out.print("|");
         }
         System.out.print("\nTo return to the main menu press 1 and enter");
-        while(exitInstructions());
+        while(state) {
+            Scanner in = new Scanner(System.in);
+            switch (in.nextInt()) {
+                case 1:
+                    state = false;
+                    break;
+                default:
+                    System.err.println("Unrecognized option");
+            }
+        }
         clearConsole();
-    }
-    private boolean exitInstructions(){
-        Scanner in = new Scanner(System.in);
-        if(in.nextInt() == 1)
-            return false;
-        return true;
     }
     public void victory(){
         System.out.print("A win!\n");

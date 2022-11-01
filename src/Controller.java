@@ -1,32 +1,42 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Controller {
     private Board board = new Board();
     private Show show = new Show();
-
     private Ai ai = new Ai();
-
+    private Tournament tournament = new Tournament();
     private int player;//which stone is the player using
     private int computer;//which stone is the computer using
-
     private int checkW;
     int currentPlayer;
     public void start() {
         /*Menu*/
         boolean state = true;
         checkW = 2;
-        while(state){
-            show.setUp();
+        while(state) {
             Scanner in = new Scanner(System.in);
-            if(in.nextInt() == 1) {
-                startGame();
+            show.setUp();
+            switch (in.nextInt()) {
+                case 1:
+                    System.out.println("1");
+                    startGame();
+                    break;
+                case 2:
+                    System.out.println("2");
+                    show.instructions();
+                    break;
+                case 3:
+                    System.out.println("3");
+                    tournament.start();
+                    break;
+                case 9:
+                    state = false;
+                    break;
+                default:
+                    System.err.println("Unrecognized option");
             }
-            else if(in.nextInt() == 2) {
-                show.instructions();
-            }
-            else if(in.nextInt() == 9)
-                state = false;
         }
     }
 
@@ -36,15 +46,14 @@ public class Controller {
     }
     private boolean gameLoop(Board board, Show show){
         /*Game loop function*/
+        show.boardToConsole(board);
         if (currentPlayer == 0){
             show.playerTurn();
             if(makeMove(board))
                 currentPlayer = 1;
-            show.boardToConsole(board);
         }else{
             show.aiTurn();
             ai.turn(board, computer);
-            show.boardToConsole(board);
             currentPlayer = 0;
         }
         /*check for Wins or EndGame*/
@@ -55,7 +64,7 @@ public class Controller {
             if(computer == 0)
                 show.loss();
             board.flush();
-            return false;
+            return false ;
         } else if (checkW == 1){
             if(player == 0)
                 show.loss();
