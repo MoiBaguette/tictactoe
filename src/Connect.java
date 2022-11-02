@@ -17,6 +17,17 @@ public class Connect{
         //outbound communication thread
         outputThread = new OutputThread(socket);
         outputThread.start();
+
+        while(getReply().isEmpty()){
+            try{Thread.sleep(100);}catch (Exception e){}
+        }
+        System.out.println(getReply());
+        inputThread.flush();
+        outputThread.setCommand("login gerco\n");
+        while(getReply().isEmpty()){
+            try{Thread.sleep(100);}catch (Exception e){}
+        }
+        System.out.println(getReply());
     }
     public StringBuilder getReply() {
         return inputThread.getReply();
@@ -26,9 +37,6 @@ public class Connect{
     }
     public boolean readReady(){
         return inputThread.isReadReady();
-    }
-    public void resetReadReady(){
-        inputThread.resetReadReady();
     }
 }
 class InputThread extends Thread{
@@ -40,7 +48,7 @@ class InputThread extends Thread{
     public InputThread(Socket socket) {
         this.socket = socket;
         this.state = true;
-        this.readReady = false;
+        this.readReady = true;
     }
     public void run(){
         boolean beenHere = false;
@@ -49,12 +57,7 @@ class InputThread extends Thread{
             while (state) {
                 while (in.ready()) {
                     reply.append(in.readLine());
-                    sleep(100);
-                    beenHere = true;
-                }
-                if(beenHere){
-                    readReady = true;
-                    beenHere = false;
+                    sleep(100);ven
                 }
             }
         }catch(Exception e){
@@ -70,9 +73,8 @@ class InputThread extends Thread{
     public boolean isReadReady(){
         return readReady;
     }
-    public void resetReadReady(){
-        readReady = false;
-        reply = null;
+    public void flush(){
+        reply.setLength(0);
     }
 }
 
@@ -88,11 +90,10 @@ class OutputThread extends Thread{
         try{
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             while (state) {
-                System.out.println(command);
-                if (command != null) {
+                if (!command.isEmpty()) {
                     out.println(command + "\n");
                     System.out.println(command);
-                    command = null;
+                    command = "";
                 }
             }
         }catch(Exception e){
