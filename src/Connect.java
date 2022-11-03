@@ -1,11 +1,13 @@
 import java.io.*;
 import java.net.Socket;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Connect{
     private Socket socket;
     private InputThread inputThread;
     private OutputThread outputThread;
-    public void connect(String hostname, int port){
+    public Connect(String hostname, int port){
         try {
             socket = new Socket(hostname, port);
         } catch (IOException e) {
@@ -17,94 +19,63 @@ public class Connect{
         //outbound communication thread
         outputThread = new OutputThread(socket);
         outputThread.start();
-
-        while(getReply().isEmpty()){
-            try{Thread.sleep(100);}catch (Exception e){}
-        }
-        System.out.println(getReply());
-        inputThread.flush();
-        outputThread.setCommand("login gerco\n");
-        while(getReply().isEmpty()){
-            try{Thread.sleep(100);}catch (Exception e){}
-        }
-        System.out.println(getReply());
     }
-    public StringBuilder getReply() {
+    public String getReply(){
         return inputThread.getReply();
     }
     public void setCommand(String command){
         outputThread.setCommand(command);
-    }
-    public boolean readReady(){
-        return inputThread.isReadReady();
+        System.out.println("command got set");
     }
 }
 class InputThread extends Thread{
     private Socket socket;
     private BufferedReader in;
-    private boolean state;
-    private boolean readReady;
-    private StringBuilder reply = new StringBuilder();
+    private Queue<String> reply = new LinkedList<String>();
     public InputThread(Socket socket) {
         this.socket = socket;
-        this.state = true;
-        this.readReady = true;
     }
     public void run(){
-        boolean beenHere = false;
         try{
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            while (state) {
-                while (in.ready()) {
-                    reply.append(in.readLine());
-                    sleep(100);ven
+            while (true) {
+                if (in.ready()) {
+                    reply.add(in.readLine());
                 }
             }
         }catch(Exception e){
             System.out.println("InputThread failed");
         }
     }
-    public void setState(boolean state){
-        this.state = state;
-    }
-    public StringBuilder getReply() {
-        return this.reply;
-    }
-    public boolean isReadReady(){
-        return readReady;
-    }
-    public void flush(){
-        reply.setLength(0);
+    public String getReply() {
+        return reply.poll();
     }
 }
 
 class OutputThread extends Thread{
     private Socket socket;
-    private boolean state;
-    private String command;
+    private Queue<String> command = new LinkedList<String>();
     public OutputThread(Socket socket){
         this.socket = socket;
-        this.state = true;
     }
+    private String msg;
     public void run(){
         try{
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-            while (state) {
-                if (!command.isEmpty()) {
-                    out.println(command + "\n");
-                    System.out.println(command);
-                    command = "";
+            while (true) {
+                if (command.element() != null) {
+                    msg = command.poll();
+                    System.out.println(msg);
+                    out.println(msg + "\n");
                 }
             }
         }catch(Exception e){
             System.out.println("Output Thread failed");
         }
     }
-    public void setState(boolean state){
-        this.state = state;
-    }
     public void setCommand(String command){
-        this.command = command;
+        this.command.add(command);
+        System.out.printf("command got added");
     }
 }
 

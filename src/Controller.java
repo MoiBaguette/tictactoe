@@ -1,17 +1,16 @@
-import java.util.Random;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Controller {
+    private String playerName = "Gerco2";
     private Board board = new Board();
     private Show show = new Show();
     private Ai ai = new Ai();
-    private Connect connect = new Connect();
-    private int player;//which stone is the player using
-    private int computer;//which stone is the computer using
+    private Connect connect = new Connect("localhost", 7789);
+    private Parser parse = new Parser(playerName);
+    private int playerPiece;//which piece is the player using
+    private int opponentPiece;//which piece is the computer using
     private int checkW;
-    int currentPlayer;
-
+    private int currentPlayer;
     public void start() {
         /*Menu*/
         boolean state = true;
@@ -22,7 +21,6 @@ public class Controller {
             switch (in.nextInt()) {
                 case 1:
                     System.out.println("1");
-                    startGame();
                     break;
                 case 2:
                     System.out.println("2");
@@ -30,7 +28,7 @@ public class Controller {
                     break;
                 case 3:
                     System.out.println("3");
-                    tournament(connect);
+                    startTournament();
                     break;
                 case 9:
                     state = false;
@@ -41,75 +39,54 @@ public class Controller {
         }
     }
 
-    private void startGame() {
-        whoGoesFirst();
-        while (gameLoop(board, show)) ;
+    private void startTournament() {
+        System.out.println(connect.getReply());//flush welcome
+        System.out.println(connect.getReply());
+        connect.setCommand(String.format("login %s", playerName));
+        String serverMsg;
+        while((serverMsg = connect.getReply()) == null){}//wait for reply
+        System.out.println(serverMsg);//print reply
+
+        while(true){//wait for match
+            serverMsg = connect.getReply();
+            if(serverMsg != null){//if incoming parse msg
+                parse.parse(serverMsg);
+            }
+            if(parse.getStatus()){
+                whoGoesFirst();
+                gameLoop();
+            }
+
+        }
     }
 
-    private boolean gameLoop(Board board, Show show) {
-        /*Game loop function*/
-        show.boardToConsole(board);
-        if (currentPlayer == 0) {
-            show.playerTurn();
-            if (makeMove(board))
-                currentPlayer = 1;
-        } else {
-            show.aiTurn();
-            ai.turn(board, computer);
+    private void whoGoesFirst(){
+        if(parse.getToMove() == true){
+            playerPiece = 1;
+            currentPlayer = 1;
+            opponentPiece = 0;
+        }else{
+            playerPiece = 0;
             currentPlayer = 0;
+            opponentPiece = 1;
         }
-        /*check for Wins or EndGame*/
-        checkW = board.checkWinner();
-        if (checkW == 0) {
-            if (player == 0)
-                show.victory();
-            if (computer == 0)
-                show.loss();
-            board.flush();
+    }
+    private boolean gameLoop() {
+        String serverMsg;
+        if(parse.getStatus() == false)
             return false;
-        } else if (checkW == 1) {
-            if (player == 0)
-                show.loss();
-            if (computer == 0)
-                show.victory();
-            board.flush();
-            return false;
-        } else {
-            if (board.endGame()) {
-                show.draw();
-                board.flush();
-                return false;
+        if(currentPlayer == 1){
+            connect.setCommand(String.format("MOVE %d", ai.turn(board, 1)));
+            currentPlayer = 0;
+        }else{
+            while(!(parse.getPlayerToMove().equals(playerName))){
+                serverMsg = connect.getReply();
+                parse.parse(serverMsg);//parse msg
             }
+            board.setAtPos(parse.getMove(), opponentPiece);
+            currentPlayer = 1;
         }
         return true;
     }
 
-    private void whoGoesFirst() {
-        /*Randomly assigns 0 or 1 to var rn, which then decides value for the player and computer.*/
-        Random random = new Random();
-        int rn = random.nextInt(2);
-        currentPlayer = rn;
-        if (rn == 1) {
-            player = 0;
-            computer = 1;
-        } else {
-            player = 1;
-            computer = 0;
-        }
-    }
-
-    private boolean makeMove(Board board) {
-        /*take a position from console, asks board if this is a valid move.
-         * if not valid return false so the loop asks for a valid move again*/
-        Scanner scanner = new Scanner(System.in);
-        int position = scanner.nextInt();
-        if (board.setAtPos(position, player))
-            return true;
-        else
-            return false;
-    }
-
-    private void tournament(Connect connect) {
-        connect.connect("localhost", 7789);
-    }
 }

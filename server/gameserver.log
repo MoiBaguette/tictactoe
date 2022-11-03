@@ -1,51 +1,176 @@
-2022-11-02 12:41:04.216  INFO 8012 --- [main] nl.hanze.newgameserver.Main              : Starting Main on Fatboy-Slim with PID 8012 (C:\Users\gvanw\Documents\Jaar 2\Project\tictactoe\server\server.jar started by gvanw in C:\Users\gvanw\Documents\Jaar 2\Project\tictactoe\server)
-2022-11-02 12:41:04.230  INFO 8012 --- [main] nl.hanze.newgameserver.Main              : No active profile set, falling back to default profiles: default
-2022-11-02 12:41:05.707  INFO 8012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2022-11-02 12:41:05.720  INFO 8012 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-11-02 12:41:05.721  INFO 8012 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
-2022-11-02 12:41:05.798  INFO 8012 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-11-02 12:41:05.798  INFO 8012 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1463 ms
-2022-11-02 12:41:05.940  INFO 8012 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
-2022-11-02 12:41:05.944  INFO 8012 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
-2022-11-02 12:41:05.967  INFO 8012 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
-2022-11-02 12:41:06.015  INFO 8012 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
-2022-11-02 12:41:06.212  INFO 8012 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
-2022-11-02 12:41:06.318  INFO 8012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2022-11-02 12:41:06.320  INFO 8012 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
-2022-11-02 12:41:06.320  INFO 8012 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
-2022-11-02 12:41:06.320  INFO 8012 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
-2022-11-02 12:41:06.333  INFO 8012 --- [main] nl.hanze.newgameserver.Main              : Started Main in 2.907 seconds (JVM running for 3.654)
-2022-11-02 12:41:06.340  INFO 8012 --- [main] main                                     : gameserver is now listening on port 7789
-2022-11-02 12:42:06.018  INFO 8012 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
-2022-11-02 12:53:45.970  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50557
-2022-11-02 12:54:03.044  WARN 8012 --- [Thread-2] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:04:50.483  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50598
-2022-11-02 13:04:58.582  WARN 8012 --- [Thread-3] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:13:25.199  INFO 8012 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 2, active threads = 1, queued tasks = 0, completed tasks = 1]
-2022-11-02 13:15:21.423  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50683
-2022-11-02 13:15:38.548  WARN 8012 --- [Thread-4] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:16:22.561  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50691
-2022-11-02 13:16:50.979  WARN 8012 --- [Thread-5] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:16:55.020  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50697
-2022-11-02 13:17:00.926  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50698
-2022-11-02 13:18:09.323  WARN 8012 --- [Thread-7] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:18:09.323  WARN 8012 --- [Thread-6] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:18:14.817  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50709
-2022-11-02 13:18:14.822  INFO 8012 --- [Thread-8] client-thread <not logged in>            : issues command: 'login gerco'
-2022-11-02 13:18:14.896  INFO 8012 --- [Thread-8] client-thread gerco                      : issues command: ''
-2022-11-02 13:18:14.896  INFO 8012 --- [Thread-8] client-thread gerco                      : issues command: ''
-2022-11-02 13:20:00.146  WARN 8012 --- [Thread-8] client-thread gerco                      : Server exception: Connection reset, disconnecting client
-2022-11-02 13:20:03.966  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50747
-2022-11-02 13:22:44.512  WARN 8012 --- [Thread-9] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:22:48.423  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50754
-2022-11-02 13:24:07.218  WARN 8012 --- [Thread-10] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:24:12.571  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50779
-2022-11-02 13:24:52.201  WARN 8012 --- [Thread-11] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:24:55.597  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50785
-2022-11-02 13:25:56.121  WARN 8012 --- [Thread-12] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
-2022-11-02 13:26:03.141  INFO 8012 --- [main] main                                     : new client connected from /127.0.0.1:50791
-2022-11-02 13:26:03.141  INFO 8012 --- [Thread-13] client-thread <not logged in>            : issues command: 'login gerco'
-2022-11-02 13:26:03.141  INFO 8012 --- [Thread-13] login-command                            : reviving gerco from offline player list! Welcome back.
-2022-11-02 13:26:03.141  INFO 8012 --- [Thread-13] client-thread gerco                      : issues command: ''
-2022-11-02 13:26:03.141  INFO 8012 --- [Thread-13] client-thread gerco                      : issues command: ''
-2022-11-02 13:28:45.170  WARN 8012 --- [Thread-13] client-thread gerco                      : Server exception: Connection reset, disconnecting client
+2022-11-03 13:18:40.184  INFO 5432 --- [main] nl.hanze.newgameserver.Main              : Starting Main on Fatboy-Slim with PID 5432 (C:\Users\gvanw\Documents\Jaar 2\Project\tictactoe\server\server.jar started by gvanw in C:\Users\gvanw\Documents\Jaar 2\Project\tictactoe\server)
+2022-11-03 13:18:40.194  INFO 5432 --- [main] nl.hanze.newgameserver.Main              : No active profile set, falling back to default profiles: default
+2022-11-03 13:18:41.347  INFO 5432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-03 13:18:41.360  INFO 5432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-03 13:18:41.362  INFO 5432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-11-03 13:18:41.440  INFO 5432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-03 13:18:41.440  INFO 5432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1181 ms
+2022-11-03 13:18:41.583  INFO 5432 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-11-03 13:18:41.589  INFO 5432 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-11-03 13:18:41.613  INFO 5432 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-11-03 13:18:41.660  INFO 5432 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-11-03 13:18:41.999  INFO 5432 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2022-11-03 13:18:42.145  INFO 5432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-03 13:18:42.145  INFO 5432 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-11-03 13:18:42.145  INFO 5432 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-11-03 13:18:42.145  INFO 5432 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-11-03 13:18:42.155  INFO 5432 --- [main] nl.hanze.newgameserver.Main              : Started Main in 2.43 seconds (JVM running for 2.93)
+2022-11-03 13:18:42.171  INFO 5432 --- [main] main                                     : gameserver is now listening on port 7789
+2022-11-03 13:19:00.687  INFO 5432 --- [main] main                                     : new client connected from /127.0.0.1:51378
+2022-11-03 13:19:39.980  INFO 5432 --- [Thread-2] client-thread <not logged in>            : issues command: 'login gerco'
+2022-11-03 13:19:41.671  INFO 5432 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2022-11-03 13:19:57.422  INFO 5432 --- [main] main                                     : new client connected from /127.0.0.1:51440
+2022-11-03 13:20:05.295  INFO 5432 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-03 13:20:05.295  INFO 5432 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-03 13:20:05.303  INFO 5432 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2022-11-03 13:20:08.912  INFO 5432 --- [http-nio-8081-exec-1] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@4b85be9f
+2022-11-03 13:20:08.912  INFO 5432 --- [http-nio-8081-exec-6] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@49a519ac
+2022-11-03 13:20:26.748  INFO 5432 --- [Thread-3] client-thread <not logged in>            : issues command: 'login gerco1'
+2022-11-03 13:20:30.228  INFO 5432 --- [http-nio-8081-exec-5] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@3d37ebc4
+2022-11-03 13:20:30.228  INFO 5432 --- [http-nio-8081-exec-5] tournament-manager                       : start tournament 
+2022-11-03 13:20:30.228  INFO 5432 --- [http-nio-8081-exec-5] tournament-manager                       : players in tournament pool: 2
+2022-11-03 13:20:30.244  INFO 5432 --- [http-nio-8081-exec-5] tournament 1                             : next round starts
+2022-11-03 13:20:30.245  INFO 5432 --- [http-nio-8081-exec-5] tournament 1                             : next match: [gerco vs gerco1]
+2022-11-03 13:20:30.261  INFO 5432 --- [http-nio-8081-exec-5] game [1,gerco,gerco1]                    : started
+2022-11-03 13:20:30.261  INFO 5432 --- [http-nio-8081-exec-5] tournament 1                             : game started
+2022-11-03 13:20:35.962  INFO 5432 --- [Thread-2] client-thread gerco                      : issues command: '1'
+2022-11-03 13:20:35.962  INFO 5432 --- [Thread-2] client-thread gerco                      : command exception: 'unknown command'
+2022-11-03 13:20:38.417  INFO 5432 --- [Thread-2] client-thread gerco                      : issues command: 'move 1'
+2022-11-03 13:20:46.503  INFO 5432 --- [Thread-3] client-thread gerco1                     : issues command: 'move 3'
+2022-11-03 13:20:56.504  INFO 5432 --- [Timer-2] game [1,gerco,gerco1]                    : winner: gerco1; Turn timelimit reached
+2022-11-03 13:20:56.506  INFO 5432 --- [Timer-2] tournament 1                             : game [gerco vs gerco1] result: gerco1
+2022-11-03 13:20:56.510  INFO 5432 --- [Timer-2] tournament 1                             : finished
+2022-11-03 13:29:37.690  WARN 5432 --- [Thread-2] client-thread gerco                      : Server exception: Connection reset, disconnecting client
+2022-11-03 13:29:39.437  WARN 5432 --- [Thread-3] client-thread gerco1                     : Server exception: Connection reset, disconnecting client
+2022-11-03 13:50:40.693  INFO 5432 --- [MessageBroker-9] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 48], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 15], sockJsScheduler[pool size = 12, active threads = 2, queued tasks = 1, completed tasks = 425]
+2022-11-03 14:04:27.131  INFO 5432 --- [main] main                                     : new client connected from /127.0.0.1:51940
+2022-11-03 14:04:31.912  INFO 5432 --- [Thread-8] client-thread <not logged in>            : issues command: 'login gerco'
+2022-11-03 14:04:31.914  INFO 5432 --- [Thread-8] login-command                            : reviving gerco from offline player list! Welcome back.
+2022-11-03 14:04:52.057  INFO 5432 --- [main] main                                     : new client connected from /127.0.0.1:51946
+2022-11-03 14:04:55.809  INFO 5432 --- [Thread-9] client-thread <not logged in>            : issues command: 'login kars'
+2022-11-03 14:05:06.756  INFO 5432 --- [http-nio-8081-exec-7] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@59a8d957
+2022-11-03 14:05:06.756  INFO 5432 --- [http-nio-8081-exec-3] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@33d944c7
+2022-11-03 14:05:08.289  INFO 5432 --- [http-nio-8081-exec-8] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@49f042f0
+2022-11-03 14:05:08.289  INFO 5432 --- [http-nio-8081-exec-8] tournament-manager                       : start tournament 
+2022-11-03 14:05:08.297  INFO 5432 --- [http-nio-8081-exec-8] tournament-manager                       : tournament state:FINISHED
+2022-11-03 14:05:08.299  INFO 5432 --- [http-nio-8081-exec-8] tournament-manager                       : players in tournament pool: 2
+2022-11-03 14:05:08.300  INFO 5432 --- [http-nio-8081-exec-8] tournament 2                             : next round starts
+2022-11-03 14:05:08.302  INFO 5432 --- [http-nio-8081-exec-8] tournament 2                             : next match: [gerco vs kars]
+2022-11-03 14:05:08.305  INFO 5432 --- [http-nio-8081-exec-8] game [2,gerco,kars]                      : started
+2022-11-03 14:05:08.305  INFO 5432 --- [http-nio-8081-exec-8] tournament 2                             : game started
+2022-11-03 14:05:18.309  INFO 5432 --- [Timer-3] game [2,gerco,kars]                      : winner: kars; Turn timelimit reached
+2022-11-03 14:05:18.309  INFO 5432 --- [Timer-3] tournament 2                             : game [gerco vs kars] result: kars
+2022-11-03 14:05:18.309  INFO 5432 --- [Timer-3] tournament 2                             : finished
+2022-11-03 14:05:22.336  INFO 5432 --- [http-nio-8081-exec-7] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@5280bfa6
+2022-11-03 14:05:22.336  INFO 5432 --- [http-nio-8081-exec-3] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@6ce944a9
+2022-11-03 14:05:26.041  INFO 5432 --- [http-nio-8081-exec-1] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@9403706
+2022-11-03 14:05:26.041  INFO 5432 --- [http-nio-8081-exec-1] tournament-manager                       : start tournament 
+2022-11-03 14:05:26.041  INFO 5432 --- [http-nio-8081-exec-1] tournament-manager                       : tournament state:FINISHED
+2022-11-03 14:05:26.041  INFO 5432 --- [http-nio-8081-exec-1] tournament-manager                       : players in tournament pool: 2
+2022-11-03 14:05:26.057  INFO 5432 --- [http-nio-8081-exec-1] tournament 3                             : next round starts
+2022-11-03 14:05:26.057  INFO 5432 --- [http-nio-8081-exec-1] tournament 3                             : next match: [gerco vs kars]
+2022-11-03 14:05:26.057  INFO 5432 --- [http-nio-8081-exec-1] game [3,gerco,kars]                      : started
+2022-11-03 14:05:26.057  INFO 5432 --- [http-nio-8081-exec-1] tournament 3                             : game started
+2022-11-03 14:05:34.837  INFO 5432 --- [Thread-8] client-thread gerco                      : issues command: 'Move 1'
+2022-11-03 14:05:40.976  INFO 5432 --- [Thread-9] client-thread kars                       : issues command: ''
+2022-11-03 14:05:43.262  INFO 5432 --- [Thread-9] client-thread kars                       : issues command: 'move 0'
+2022-11-03 14:05:53.263  INFO 5432 --- [Timer-6] game [3,gerco,kars]                      : winner: kars; Turn timelimit reached
+2022-11-03 14:05:53.265  INFO 5432 --- [Timer-6] tournament 3                             : game [gerco vs kars] result: kars
+2022-11-03 14:05:53.265  INFO 5432 --- [Timer-6] tournament 3                             : finished
+2022-11-03 14:20:40.704  INFO 5432 --- [MessageBroker-7] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 246], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 87], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 855]
+2022-11-03 14:45:37.632  INFO 5432 --- [http-nio-8081-exec-2] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@633f7d7e
+2022-11-03 14:45:37.632  INFO 5432 --- [http-nio-8081-exec-10] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@2653ad5c
+2022-11-03 14:47:41.977  WARN 5432 --- [Thread-8] client-thread gerco                      : Server exception: Connection reset, disconnecting client
+2022-11-03 14:47:42.010  WARN 5432 --- [Thread-9] client-thread kars                       : Server exception: Connection reset, disconnecting client
+2022-11-03 14:50:40.718  INFO 5432 --- [MessageBroker-2] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 270], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 89], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 1288]
+2022-11-03 15:20:40.734  INFO 5432 --- [MessageBroker-5] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 270], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 89], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 1700]
+2022-11-03 15:50:40.740  INFO 5432 --- [MessageBroker-10] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 270], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 89], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 2133]
+2022-11-03 16:20:40.746  INFO 5432 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 1 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(1)-CONNECTED(1)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 270], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 89], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 2566]
+2022-11-03 16:28:56.012  INFO 5432 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-11-03 16:28:56.012  INFO 5432 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-11-03 16:28:56.012  INFO 5432 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-11-03 16:28:56.116  INFO 5432 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-11-03 16:28:56.117  INFO 5432 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-11-03 16:28:56.120  INFO 5432 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-11-03 16:28:56.120  INFO 5432 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
+2022-11-03 16:28:58.990  INFO 18260 --- [main] nl.hanze.newgameserver.Main              : Starting Main on Fatboy-Slim with PID 18260 (C:\Users\gvanw\Documents\Jaar 2\Project\tictactoe\server\server.jar started by gvanw in C:\Users\gvanw\Documents\Jaar 2\Project\tictactoe\server)
+2022-11-03 16:28:58.998  INFO 18260 --- [main] nl.hanze.newgameserver.Main              : No active profile set, falling back to default profiles: default
+2022-11-03 16:29:00.664  INFO 18260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-03 16:29:00.688  INFO 18260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-03 16:29:00.688  INFO 18260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2022-11-03 16:29:00.772  INFO 18260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-03 16:29:00.776  INFO 18260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1666 ms
+2022-11-03 16:29:00.915  INFO 18260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientInboundChannelExecutor'
+2022-11-03 16:29:00.918  INFO 18260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'clientOutboundChannelExecutor'
+2022-11-03 16:29:00.939  INFO 18260 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'messageBrokerTaskScheduler'
+2022-11-03 16:29:01.003  INFO 18260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'brokerChannelExecutor'
+2022-11-03 16:29:01.217  INFO 18260 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2022-11-03 16:29:01.325  INFO 18260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-03 16:29:01.325  INFO 18260 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2022-11-03 16:29:01.325  INFO 18260 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-11-03 16:29:01.325  INFO 18260 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2022-11-03 16:29:01.343  INFO 18260 --- [main] nl.hanze.newgameserver.Main              : Started Main in 3.156 seconds (JVM running for 3.931)
+2022-11-03 16:29:01.347  INFO 18260 --- [main] main                                     : gameserver is now listening on port 7789
+2022-11-03 16:29:39.123  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52757
+2022-11-03 16:30:01.005  INFO 18260 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2022-11-03 16:30:08.075  WARN 18260 --- [Thread-2] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:30:10.388  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52765
+2022-11-03 16:30:41.210  WARN 18260 --- [Thread-3] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:30:43.521  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52771
+2022-11-03 16:31:07.902  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52777
+2022-11-03 16:31:16.200  INFO 18260 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-03 16:31:16.200  INFO 18260 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-03 16:31:16.209  INFO 18260 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2022-11-03 16:31:16.615  INFO 18260 --- [http-nio-8081-exec-4] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@6bd1e25b
+2022-11-03 16:31:16.666  INFO 18260 --- [http-nio-8081-exec-10] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@1b642e97
+2022-11-03 16:31:19.826  INFO 18260 --- [http-nio-8081-exec-2] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@6f47ef20
+2022-11-03 16:31:19.826  INFO 18260 --- [http-nio-8081-exec-2] tournament-manager                       : start tournament 
+2022-11-03 16:31:24.606  INFO 18260 --- [http-nio-8081-exec-6] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@18912a8
+2022-11-03 16:31:24.669  INFO 18260 --- [http-nio-8081-exec-3] api-controller                           : decoded JWT token: com.auth0.jwt.JWTDecoder@6d3cf169
+2022-11-03 16:32:49.869  WARN 18260 --- [Thread-5] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:32:51.760  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52795
+2022-11-03 16:32:56.044  WARN 18260 --- [Thread-4] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:34:46.678  WARN 18260 --- [Thread-8] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:34:51.051  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52804
+2022-11-03 16:34:52.050  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52807
+2022-11-03 16:37:23.435  WARN 18260 --- [Thread-9] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:37:23.451  WARN 18260 --- [Thread-10] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:37:25.760  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52822
+2022-11-03 16:38:12.203  WARN 18260 --- [Thread-11] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:38:14.343  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52832
+2022-11-03 16:38:55.206  WARN 18260 --- [Thread-12] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:38:57.500  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52838
+2022-11-03 16:39:32.209  WARN 18260 --- [Thread-13] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:39:34.586  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52844
+2022-11-03 16:40:10.365  WARN 18260 --- [Thread-14] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:40:12.474  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52854
+2022-11-03 16:40:54.625  WARN 18260 --- [Thread-15] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:40:57.022  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52861
+2022-11-03 16:42:14.078  WARN 18260 --- [Thread-16] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:42:16.516  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52871
+2022-11-03 16:42:37.390  WARN 18260 --- [Thread-17] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:42:39.816  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52878
+2022-11-03 16:42:43.166  WARN 18260 --- [Thread-18] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:43:03.784  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52884
+2022-11-03 16:45:29.921  WARN 18260 --- [Thread-19] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:45:32.223  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52892
+2022-11-03 16:46:45.995  WARN 18260 --- [Thread-20] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:46:47.396  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52899
+2022-11-03 16:48:30.053  WARN 18260 --- [Thread-21] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:48:32.065  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52911
+2022-11-03 16:48:37.979  WARN 18260 --- [Thread-22] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:48:39.529  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52917
+2022-11-03 16:48:55.257  WARN 18260 --- [Thread-23] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:48:56.857  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52923
+2022-11-03 16:50:08.742  WARN 18260 --- [Thread-24] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:50:11.024  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52929
+2022-11-03 16:51:05.845  WARN 18260 --- [Thread-25] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:51:07.938  INFO 18260 --- [main] main                                     : new client connected from /127.0.0.1:52937
+2022-11-03 16:53:37.301  WARN 18260 --- [Thread-26] client-thread <not logged in>            : Server exception: Connection reset, disconnecting client
+2022-11-03 16:53:43.077  INFO 18260 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2022-11-03 16:53:43.077  INFO 18260 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2022-11-03 16:53:43.077  INFO 18260 --- [SpringContextShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2022-11-03 16:53:43.161  INFO 18260 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'brokerChannelExecutor'
+2022-11-03 16:53:43.161  INFO 18260 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2022-11-03 16:53:43.161  INFO 18260 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2022-11-03 16:53:43.164  INFO 18260 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'clientInboundChannelExecutor'
